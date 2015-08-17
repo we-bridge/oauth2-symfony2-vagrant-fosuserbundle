@@ -35,6 +35,7 @@ class SecurityController extends Controller
                     'phone_number' => $user->getPhoneNumber(),
                     'username' => $user->getUsername(),
                     'roles' => $user->getRoles(),
+                    'last_name' => $user->getLastName(),
                 ]
             );
         } catch (OAuth2AuthenticateException $e) {
