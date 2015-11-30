@@ -13,7 +13,7 @@ trait HandleUserTrait
      * @param string $group validation group to apply
      *
      * @return array contains the error(s) list,
-     * empty if no error
+     *               empty if no error
      */
     private function validates($updatedUser, $group, $currentUser = null)
     {
