@@ -236,9 +236,18 @@ class ManagersController extends FOSRestController
 
     private function isCurrentUserAdmin()
     {
-        return in_array(
-            'ROLE_ADMINPANEL',
-            $this->getCurrentUser()->getRoles()
-        );
+        $adminList = ['ROLE_ADMINPANEL', 'ROLE_SUPER_ADMIN'];
+        $currentRoles = $this->getCurrentUser()->getRoles();
+
+        foreach ($adminList as $role) {
+            if (in_array(
+                $role,
+                $currentRoles
+            )) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
